@@ -1,36 +1,30 @@
-version: 2.1
+version: 2.1  # Specifying workflow version
 
 jobs:
   build:
     docker:
-      - image: python:3.11.4-alpine
-
-    working_directory: /app
+      - image: circleci/python:3.11  # Using a pre-built Python image for efficiency
 
     steps:
-      - checkout
+      - checkout  # Fetch code from Git repository
 
-      # Install dependencies
       - run:
           name: Install dependencies
           command: |
-            python3 -m venv /opt/venv
-            /opt/venv/bin/pip install --upgrade pip
-            /opt/venv/bin/pip install -r requirements.txt
+            python3 -m venv /opt/venv  # Create a virtual environment
+            . /opt/venv/bin/activate  # Activate the virtual environment
+            pip install -r requirements.txt  # Install dependencies from requirements.txt
 
-      # Linting with flake8
-      - run:
+      - run:   # Linting step (assuming flake8 is in the virtual environment)
           name: Run Flake8 linting
           command: |
-            /opt/venv/bin/flake8 .
+            flake8 .
 
-      # Run tests
-      - run:
+      - run:   # Testing step
           name: Run tests
           command: python manage.py test
 
 workflows:
-  version: 2
-  build:
+  build_and_test:  # More descriptive workflow name
     jobs:
-      - build
+      - build  # Reference the build job defined earlier
