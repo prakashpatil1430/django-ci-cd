@@ -5,8 +5,6 @@ jobs:
     docker:
       - image: python:3.11.4-alpine  # Using a pre-built Python image for efficiency
 
-    working_directory: /app/
-
     steps:
       - checkout  # Fetch code from Git repository
 
