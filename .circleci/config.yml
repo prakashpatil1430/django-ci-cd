@@ -3,7 +3,7 @@ version: 2.1  # Specifying workflow version
 jobs:
   build:
     docker:
-      - image: circleci/python:3.11  # Using a pre-built Python image for efficiency
+      - image: python:3.11.4-alpine  # Using a pre-built Python image for efficiency
 
     steps:
       - checkout  # Fetch code from Git repository
