@@ -27,8 +27,7 @@ jobs:
       # Run tests
       - run:
           name: Run tests
-          command: |
-            /python manage.py test
+          command: python manage.py test
 
 workflows:
   version: 2
