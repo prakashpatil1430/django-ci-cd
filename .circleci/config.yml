@@ -22,7 +22,7 @@ jobs:
 
       - run:   # Testing step
           name: Run tests
-          command: python manage.py test
+          command: /app/python manage.py test
 
 workflows:
   build_and_test:  # More descriptive workflow name
