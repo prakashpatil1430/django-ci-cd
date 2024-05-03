@@ -1,5 +1,0 @@
-[flake8]
-ignore = E501, E402  # Ignore line too long and module level import not at top of file
-exclude =
-    settings.py
-    migrations/
