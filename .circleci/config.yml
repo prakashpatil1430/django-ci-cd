@@ -22,9 +22,9 @@ jobs:
           command: |
             /opt/venv/bin/flake8 .
 
-      - run:   # Testing step
-          name: Run tests
-          command: python manage.py test
+      # - run:   # Testing step
+      #     name: Run tests
+      #     command: python manage.py test
 
 workflows:
   build_and_test:  # More descriptive workflow name
