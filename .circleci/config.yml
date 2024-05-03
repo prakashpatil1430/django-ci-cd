@@ -5,6 +5,8 @@ jobs:
     docker:
       - image: python:3.11.4-alpine  # Using a pre-built Python image for efficiency
 
+    working_directory: /app
+
     steps:
       - checkout  # Fetch code from Git repository
 
@@ -22,7 +24,7 @@ jobs:
 
       - run:   # Testing step
           name: Run tests
-          command: /app/python manage.py test
+          command: python manage.py test
 
 workflows:
   build_and_test:  # More descriptive workflow name
