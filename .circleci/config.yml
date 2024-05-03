@@ -18,7 +18,7 @@ jobs:
       - run:   # Linting step (assuming flake8 is in the virtual environment)
           name: Run Flake8 linting
           command: |
-            flake8 .
+            /opt/venv/bin/flake8 .
 
       - run:   # Testing step
           name: Run tests
